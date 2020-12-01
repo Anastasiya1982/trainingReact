@@ -21,16 +21,25 @@ class MovieList extends Component {
 
    componentDidMount() {
        console.log("did mount");
+       this.getMovies();
+   }
+
+   componentDidUpdate(prevProps, prevState) {
+        if(prevState.sort_by !== this.state.sort_by){
+            this.getMovies();
+        }
+   }
+
+   getMovies=()=>{
        fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}`)
            .then((response)=>{
-              return response.json()
+               return response.json()
            }).then((data)=>{
            console.log("data",data)
            this.setState({
                movies:data.results
            })
-       })
-
+       });
    }
 
     removeMovie = (movie) => {
