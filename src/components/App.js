@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieItem from "./MovieList";
+import MovieList from "./MovieList";
 
 
 
@@ -7,7 +7,7 @@ import MovieItem from "./MovieList";
 function App() {
     return (
         <div>
-            <MovieItem />
+            <MovieList />
         </div>
     )
 }
