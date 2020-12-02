@@ -8,6 +8,11 @@ import React,{Component} from "react";
              willWatch:false,
          }
      }
+// если будет необходимо сделать кейс при переходе на другую сортировку
+     // componentWillUnmount() {
+     //     console.log('unmount',this.props.data.title)
+     // }
+
      render() {
 
          const {data, removeMovie, addMovieToWillWatch,removeMovieFromWillWatch} = this.props;
